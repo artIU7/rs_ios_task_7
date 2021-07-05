@@ -155,6 +155,10 @@
         self.RSSchoolSecureOneTouch.layer.borderColor = [ UIColor colorNamed:@"littleBoyBlue"].CGColor;//UIColor.redColor.CGColor;
         self.RSSchoolSecureOneTouch.layer.cornerRadius = 25.0;
         self.RSSchoolSecureOneTouch.center = CGPointMake(self.RSSchoolSecure.frame.size.width - (self.RSSchoolSecure.frame.size.width - 23) + self.RSSchoolSecureOneTouch.frame.size.height/2, self.RSSchoolSecure.frame.size.height - 15 - self.RSSchoolSecureOneTouch.frame.size.height/2);
+    
+        [self.RSSchoolSecureOneTouch addTarget:self
+                    action:@selector(addString:)
+          forControlEvents:UIControlEventTouchUpInside];
         [ self.RSSchoolSecure addSubview: self.RSSchoolSecureOneTouch ];
         // end add one touch
     
@@ -171,6 +175,9 @@
     self.RSSchoolSecureTwoTouch.layer.borderColor = [ UIColor colorNamed:@"littleBoyBlue"].CGColor;//UIColor.redColor.CGColor;
     self.RSSchoolSecureTwoTouch.layer.cornerRadius = 25.0;
     self.RSSchoolSecureTwoTouch.center = CGPointMake((self.RSSchoolSecureOneTouch.center.x + 20) + self.RSSchoolSecureOneTouch.frame.size.height/2 + self.RSSchoolSecureTwoTouch.frame.size.height/2, self.RSSchoolSecure.frame.size.height - 15 - self.RSSchoolSecureTwoTouch.frame.size.height/2);
+    [self.RSSchoolSecureOneTouch addTarget:self
+                action:@selector(addString:)
+      forControlEvents:UIControlEventTouchUpInside];
     [ self.RSSchoolSecure addSubview: self.RSSchoolSecureTwoTouch ];
     // end add one touch
     
@@ -187,6 +194,9 @@
     self.RSSchoolSecureTreeTouch.layer.borderColor = [ UIColor colorNamed:@"littleBoyBlue"].CGColor;//UIColor.redColor.CGColor;
     self.RSSchoolSecureTreeTouch.layer.cornerRadius = 25.0;
     self.RSSchoolSecureTreeTouch.center = CGPointMake((self.RSSchoolSecureTwoTouch.center.x + 20) + self.RSSchoolSecureTwoTouch.frame.size.height/2 + self.RSSchoolSecureTreeTouch.frame.size.height/2, self.RSSchoolSecure.frame.size.height - 15 - self.RSSchoolSecureTwoTouch.frame.size.height/2);
+    [self.RSSchoolSecureOneTouch addTarget:self
+                action:@selector(addString:)
+      forControlEvents:UIControlEventTouchUpInside];
     [ self.RSSchoolSecure addSubview: self.RSSchoolSecureTreeTouch ];
     // end add one touch
     
@@ -210,7 +220,9 @@
         self.RSSchoolPassword.layer.borderColor = [ UIColor colorNamed:@"venetianRed"].CGColor;
     }
 }
-
+- (void) addString:(UIButton *)paramSender{
+    
+}
 @end
 
 @implementation ViewController (KeyBoardHandling)
